@@ -1,0 +1,2 @@
+class Rower < ApplicationRecord
+end
