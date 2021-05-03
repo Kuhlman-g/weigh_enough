@@ -6,49 +6,23 @@ $hero-full-screen-text-color: white;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-between;
-  background: url("https://www.row2k.com/graphics/pod/091217.jpg") center center no-repeat;
+  justify-content: center;
+  background: url("https://www.row2k.com/graphics/pod/041017.jpg") center center no-repeat;
   background-size: cover;
 
   .middle-content-section {
     text-align: center;
+    margin: 0 auto;
+    margin-top: 20px;
+    margin-bottom: 40px;
     color: $hero-full-screen-text-color;
   }
+}
 
-  .top-content-section {
-    width: 100%;
-  }
+.top-bar {
+  background-image: linear-gradient(#037cc5, #3b68c9, #455fba, 	#3f579f);
 
-  .bottom-content-section {
-    padding: 1rem;
-
-    svg {
-      height: rem-calc(60);
-      width: rem-calc(60);
-      fill: $hero-full-screen-text-color;
-    }
-  }
-
-  // optional demo styles
-  .top-bar {
-    background: transparent;
-
-    .menu {
-      background: transparent;
-    }
-
-    .menu-text {
-      color: $hero-full-screen-text-color;
-    }
-
-    .menu li {
-      display: flex;
-      align-items: center;
-    }
-
-    .menu a {
-      color: $hero-full-screen-text-color;
-      font-weight: bold;
-    }
+  a{
+    color: #acacac;
   }
 }

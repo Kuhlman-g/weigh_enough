@@ -1,13 +1,21 @@
 <div class="hero-full-screen">
 
   <div class="middle-content-section">
-    <h1>WeighEnough</h1>
-    <%= link_to "Boats", boats_path, class: "button large" %>
-    <%= link_to "Rowers", rowers_path, class: "button large" %>
+    <h1>Rowers</h1>
+    <%= link_to "Create Rowers", rowers_path, class: "button large" %>
+    <%= link_to "Rower Roster", rowers_path, class: "button large" %>
   </div>
 
-</div>
+  <div class="middle-content-section">
+    <h1>Boats</h1>
+    <%= link_to "Create Boats", boats_path, class: "button large" %>
+    <%= link_to "Boat Roster", boats_path, class: "button large" %>
+  </div>
 
-<div id="main-content-section" data-magellan-target="main-content-section">
-  <!-- your content goes here -->
+  <div class="middle-content-section">
+    <h1>Practices</h1>
+    <%= link_to "New Practice", boats_path, class: "button large" %>
+    <%= link_to "Saved Practices", rowers_path, class: "button large" %>
+  </div>
+
 </div>
