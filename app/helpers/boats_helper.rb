@@ -1,2 +1,2 @@
-module BoatsControllerHelper
+module BoatsHelper
 end
