@@ -1,14 +1,18 @@
 
 $hero-full-screen-text-color: white;
 
+.main-background{
+  background: url("https://www.row2k.com/graphics/pod/041017.jpg") center center no-repeat ;
+  background-size: cover;
+  opacity: .75;
+}
+
 .hero-full-screen {
   height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background: url("https://www.row2k.com/graphics/pod/041017.jpg") center center no-repeat;
-  background-size: cover;
 
   .middle-content-section {
     text-align: center;
@@ -28,5 +32,6 @@ $hero-full-screen-text-color: white;
 }
 
 .main-rower-div{
+  opacity: 1 !important;
   color: white;
 }

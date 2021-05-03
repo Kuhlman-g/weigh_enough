@@ -28,8 +28,10 @@
       <%= value %>
     </div>
   <%- end -%>
-  <div class="hero-full-screen">
-    <%= yield %>
+  <div class="main-background">
+    <div class="hero-full-screen">
+        <%= yield %>
+    </div>
   </div>
   <%= javascript_include_tag 'application' %>
   
