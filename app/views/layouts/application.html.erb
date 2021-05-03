@@ -28,9 +28,9 @@
       <%= value %>
     </div>
   <%- end -%>
-
-  <%= yield %>
-
+  <div class="hero-full-screen">
+      <%= yield %>
+  </div>
   <%= javascript_include_tag 'application' %>
   
   <%- if Rails.env.development? || Rails.env.test? -%> 
