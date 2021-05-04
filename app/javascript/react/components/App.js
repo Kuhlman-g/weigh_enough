@@ -1,7 +1,9 @@
 import React from 'react'
+import { BrowserRouter, Route, Switch } from "react-router-dom"
+import RowerRosterContainer from './RowerRosterContainer'
 
 export const App = (props) => {
-  return (<h1>Make It So React</h1>)
+  return (<RowerRosterContainer />)
 }
 
 export default App
