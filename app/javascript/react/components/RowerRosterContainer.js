@@ -23,7 +23,7 @@ const RowerRosterContainer = (props) => {
 
   return(
     <div>
-      BIG OL HAM
+      List of Rowers
     </div>
   )
 }
