@@ -23,7 +23,8 @@ ActiveRecord::Schema.define(version: 2021_05_01_193603) do
   end
 
   create_table "rowers", force: :cascade do |t|
-    t.string "name", null: false
+    t.string "first_name", null: false
+    t.string "last_name", null: false
     t.integer "height", null: false
     t.integer "weight", null: false
     t.string "side"

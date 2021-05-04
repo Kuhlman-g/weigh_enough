@@ -5,25 +5,45 @@ const RowerRosterContainer = (props) => {
 
   const fetchRowers = async () => {
     try{
-      const response = await fetch("/api/v1/brands")
+      const response = await fetch("/api/v1/rowers")
       if (!response){
         const errorMessage = `${response.status} (${response.statusTest})`
         const error = new Error(errorMessage)
         throw(error)
       }
       const parsedRowers = await response.json()
+      setRowers(parsedRowers)
     } catch(err){
       console.error(`Error in fetch: ${err.message}`)
     }
   }
-
+  
   useEffect(() => {
     fetchRowers()
   }, [])
+  
+  const rowerArray = rowers.map((rower => {
+    return(
+      <tr className="roster-text">
+        <td data-label="Last Name">{rower.last_name}</td>
+        <td data-label="First Name">{rower.first_name}</td>
+      </tr>
+    )
+  }))
 
   return(
-    <div>
-      List of Rowers
+    <div className="grid-container">
+      <table className="responsive-card-table unstriped roster-table">
+        <thead>
+          <tr>
+            <th>Last Name</th>
+            <th>First Name</th>
+          </tr>
+        </thead>
+        <tbody>
+          {rowerArray}
+        </tbody>
+      </table>
     </div>
   )
 }
