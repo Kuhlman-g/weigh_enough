@@ -2,8 +2,6 @@ import React from 'react'
 
 const RowerCell = (props) => {
 
-
-  
   return(
     <tr onClick={props.handleClick} className="roster-text">
       <td data-label="Last Name">{props.last_name}</td>
