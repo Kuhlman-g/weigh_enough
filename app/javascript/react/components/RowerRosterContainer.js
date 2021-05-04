@@ -5,8 +5,10 @@ const RowerRosterContainer = (props) => {
 
   const rowersArray = props.rowersList.map(rower => {
 
+    let handleClick = () => { props.handleSelected(rower.id)}
+    
     return(
-    <RowerCell first_name={rower.first_name} id={rower.id} last_name={rower.last_name} />
+    <RowerCell first_name={rower.first_name} id={rower.id} last_name={rower.last_name} handleClick={handleClick} />
     )
   })
 

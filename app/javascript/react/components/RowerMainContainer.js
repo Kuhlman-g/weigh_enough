@@ -1,7 +1,18 @@
 import React, { useEffect, useState } from 'react'
 import RowerRosterContainer from './RowerRosterContainer'
+import RowerShowContainer from './RowerShowContainer'
+
 const RowerMainContainer = (props) => {
   const [rowers, setRowers] = useState([])
+  const [selectedRower, setSelectedRower] = useState([])
+
+  const toggleSelectedRower = (id) => {
+    if(id === selectedRower) {
+      setSelectedRower(null)
+    }else{
+      setSelectedRower(id)
+    }
+  }
 
   const fetchRowers = async () => {
     try{
@@ -22,9 +33,21 @@ const RowerMainContainer = (props) => {
     fetchRowers()
   }, [])
 
+  const showRower = rowers.map(rower=> {
+    if(rower.id === selectedRower){
+        return(
+          <RowerShowContainer shownRower={rower}/>
+        )}
+      })
+
   return(
     <div>
-      <RowerRosterContainer rowersList={rowers}/>
+      <div>
+        <RowerRosterContainer rowersList={rowers} handleSelected={toggleSelectedRower} />
+      </div>
+      <div>
+        {showRower}
+      </div>
     </div>
   )
   }
