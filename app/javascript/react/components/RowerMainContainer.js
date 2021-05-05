@@ -41,11 +41,11 @@ const RowerMainContainer = (props) => {
       })
 
   return(
-    <div>
-      <div>
+    <div className="rower-main-container">
+      <div className="middle-content-section">
         <RowerRosterContainer rowersList={rowers} handleSelected={toggleSelectedRower} />
       </div>
-      <div>
+      <div className="middle-content-section">
         {showRower}
       </div>
     </div>

@@ -4,7 +4,7 @@ $hero-full-screen-text-color: white;
 .hero-full-screen{
   height: 100vh;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
   justify-content: center;
 
@@ -29,13 +29,12 @@ $hero-full-screen-text-color: white;
     color: #acacac;
   }
 }
-.main-rower-div{
+.rower-main-container{
   color: white;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
 }
 .roster-text {
   color: black;
-}
-
-.roster-table{
-  background-image: linear-gradient(#037cc5, #3b68c9, #455fba, 	#3f579f);
 }

@@ -1,11 +1,7 @@
 class RowersController < ApplicationController
 
-  def index
-  end
-
-  def show
-  end
-
   def new
+    @rower = Rower.new
   end
+
 end
