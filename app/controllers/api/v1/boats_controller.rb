@@ -1,7 +1,7 @@
 class Api::V1::BoatsController < ApplicationController
   
   def index
-    render json: Boats.all
+    render json: Boat.all
   end
 
   def show
