@@ -9,6 +9,7 @@ class RowersController < ApplicationController
 
     if @rower.save
       flash.now[:notice] = "Rower Added to Roster!"
+      redirect_to "/rowers"
     else
       flash.now[:error] = "#{@rower.errors.full_messages.to_sentence}"
       render :new
