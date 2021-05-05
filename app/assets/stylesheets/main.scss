@@ -40,3 +40,9 @@ $hero-full-screen-text-color: white;
 .roster-text {
   color: black;
 }
+.boats-main-container{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}

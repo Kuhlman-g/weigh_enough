@@ -11,6 +11,8 @@ Rails.application.routes.draw do
   namespace :api do
     namespace :v1 do
       resources :rowers, only: [ :index, :show, :create ]
+      resources :boats, only | :index, create ]
+      resources :lineups, only [ :index, :show, :create ]
     end
   end
 
