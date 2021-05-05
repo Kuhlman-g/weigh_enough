@@ -3,11 +3,7 @@ import RowerMainContainer from '../rower_components/RowerMainContainer'
 import ShellContainer from './ShellContainer'
 
 const BoatMainContainer = (props)=> {
-
-
-
-
-
+  
   return(
     <div>
       <div>
