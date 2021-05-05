@@ -3,9 +3,10 @@ $translucent-form-overlay-max-width: 500px;
 .translucent-form-overlay {
   max-width: $translucent-form-overlay-max-width;
   width: 100%;
-  background-color: rgba(54, 54, 54, 0.8);
+  background-color: rgba(54, 54, 54, 0.6);
   padding: 20px;
   color: white;
+  max-height: auto;
 
   // workaround 6.3.0 bug
   .columns.row {

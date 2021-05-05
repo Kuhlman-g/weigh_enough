@@ -1,0 +1,16 @@
+.sign-up-alignment{
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-left: auto;
+  margin-right: auto;
+
+  a{
+    margin-top: 30px;
+  }
+  #sign-button{
+    text-align: center;
+  }
+}

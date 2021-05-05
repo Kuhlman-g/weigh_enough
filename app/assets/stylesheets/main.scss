@@ -2,12 +2,6 @@
 $hero-full-screen-text-color: white;
 
 .hero-full-screen{
-  height: 100vh;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-
   background-image: url("https://www.row2k.com/graphics/pod/041017.jpg");
   background-size: cover;
   background-color: rgba(255,255,255,0.6);
@@ -21,7 +15,13 @@ $hero-full-screen-text-color: white;
     color: #00000091;
   }
 }
-
+.home-alignment{
+  height: 100vh;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
 .top-bar {
   background-image: linear-gradient(#037cc5, #3b68c9, #455fba, 	#3f579f);
 
@@ -30,6 +30,8 @@ $hero-full-screen-text-color: white;
   }
 }
 .rower-main-container{
+  height: 100vh;
+  display: flex;
   color: white;
   flex-direction: row;
   align-items: center;
