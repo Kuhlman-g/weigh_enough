@@ -1,43 +1,41 @@
 <div class="translucent-form-overlay">
 <%= form_for (@rower) do |form| %>
 
-  <div class="field row-columns">
+  <div class="field">
     <%= form.label :first_name %>
     <%= form.text_field :first_name %>
   </div>
 
-  <div class="field row-columns">
+  <div class="field">
     <%= form.label :last_name %>
     <%= form.text_field :last_name %>
   </div>
 
-  <div class="field row-columns">
+  <div class="field">
     <%= form.label :height %>
     <%= form.text_field :height %>
   </div>
 
-  <div class="field row-columns">
+  <div class="field">
     <%= form.label :weight %>
     <%= form.text_field :weight %>
   </div>
 
-  <div class="field row-columns">
+  <div class="field">
     <%= form.label :side %>
     <%= form.text_field :side %>
   </div>
 
-  <div class="row">
-    <div class="field columns large-2">
+    <div class="form">
       <%= form.label :twok_pr %>
       <%= form.text_field :twok_pr %>
     </div>
-    <div class="field columns large-2">
+    <div class="field">
       <%= form.label :sixk_pr %>
       <%= form.text_field :sixk_pr %>
     </div>
-  </div>
 
-  <div class="field row-columns">
+  <div class="field">
     <%= form.label :notes %>
     <%= form.text_field :notes %>
   </div>
