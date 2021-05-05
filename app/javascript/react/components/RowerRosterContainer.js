@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React from 'react'
 import RowerCell from './RowerCell'
 
 const RowerRosterContainer = (props) => {
@@ -24,6 +24,7 @@ const RowerRosterContainer = (props) => {
           {rowersArray}
         </tbody>
       </table>
+      <a href="rowers/new">Add Rowers To Roster</a>
     </div>
   )
 }
