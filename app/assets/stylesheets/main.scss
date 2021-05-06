@@ -31,17 +31,35 @@ $hero-full-screen-text-color: white;
 }
 .rower-main-container{
   height: 100vh;
-  display: flex;
   color: white;
-  flex-direction: row;
   align-items: center;
   justify-content: center;
+  padding-top: 20px;
 }
 .roster-text {
   color: black;
+  text-align: left;
 }
+.roster-table{
+  max-width: fit-content;
+}
+.roster-show-table{
+  display: flex;
+  margin: 0 auto;
+}
+
 .boats-main-container{
   display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding-top: 40px;
+}
+
+.lineup-container{
+  height: 400px;
+  display: flex;
+  color: white;
   flex-direction: row;
   align-items: center;
   justify-content: center;

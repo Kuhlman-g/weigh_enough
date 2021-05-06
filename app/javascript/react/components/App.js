@@ -1,7 +1,7 @@
 import React from 'react'
 import { BrowserRouter, Route, Switch } from "react-router-dom"
 import RowerMainContainer from './rower_components/RowerMainContainer'
-import BoatMainContainer from './boat_components/BoatMainContainer'
+import BoatMainContainer from './lineup_components/BoatMainContainer'
 
 export const App = (props) => {
   return (    

@@ -12,7 +12,7 @@ const RowerRosterContainer = (props) => {
   })
 
   return(
-    <div className="grid-container">
+    <div className="grid-container roster-table">
       <table className="responsive-card-table unstriped roster-table">
         <thead>
           <tr>

@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import RowerRosterContainer from './RowerRosterContainer'
 import RowerShowContainer from './RowerShowContainer'
+import fetchRowers from '../fetches/FetchRowers'
 
 const RowerMainContainer = (props) => {
   const [rowers, setRowers] = useState([])
@@ -14,24 +15,11 @@ const RowerMainContainer = (props) => {
     }
   }
 
-  const fetchRowers = async () => {
-    try{
-      const response = await fetch("/api/v1/rowers")
-      if (!response){
-        const errorMessage = `${response.status} (${response.statusTest})`
-        const error = new Error(errorMessage)
-        throw(error)
-      }
-      const parsedRowers = await response.json()
-      setRowers(parsedRowers)
-    } catch(err){
-      console.error(`Error in fetch: ${err.message}`)
-    }
-  }
-
   useEffect(() => {
-    fetchRowers()
-  }, [])
+    fetchRowers().then((parsedRowers) => {
+      setRowers(parsedRowers)
+    }) 
+  },[])
 
   const showRower = rowers.map(rower=> {
     if(rower.id === selectedRower){
@@ -42,11 +30,11 @@ const RowerMainContainer = (props) => {
 
   return(
       <div className="rower-main-container">
-        <div className="middle-content-section">
-          <RowerRosterContainer rowersList={rowers} handleSelected={toggleSelectedRower} />
+        <div className="middle-content-section roster-show-table">
+          {showRower}
         </div>
         <div className="middle-content-section">
-          {showRower}
+          <RowerRosterContainer rowersList={rowers} handleSelected={toggleSelectedRower} />
         </div>
       </div>
   )
