@@ -20,6 +20,10 @@ const BoatMainContainer = (props)=> {
     }
   }
 
+  const toggleSelectedShell = (id) => {
+      setSelectedShell(id)
+    }
+
   useEffect(() => {
     fetchShells().then((parsedShells) => {
       setShells(parsedShells)
@@ -38,15 +42,20 @@ const BoatMainContainer = (props)=> {
           <RowerShowContainer shownRower={rower}/>
         )}
       })
-
+  let showShell
+   shells.forEach(shell =>{
+    if(parseInt(shell.id) == parseInt(selectedShell)){
+    showShell = shell
+    }
+  }) 
 
   return(
     <div>
       <div className="boats-main-container">
-        <ShellContainer shells={shells}/>
-      </div>
-      <div className="lineup-container">
-        <LineupContainer/>
+        <ShellContainer shells={shells} handleSelectedShell={toggleSelectedShell}/>
+        <div>
+        <LineupContainer shell={showShell} />
+        </div>
       </div>
       <div className="boats-main-container">
         <div className="">

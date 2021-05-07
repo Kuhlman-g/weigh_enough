@@ -1,7 +1,7 @@
 
 $hero-full-screen-text-color: white;
 
-.hero-full-screen{
+body{
   background-image: url("https://www.row2k.com/graphics/pod/041017.jpg");
   background-size: cover;
   background-color: rgba(255,255,255,0.6);
@@ -42,6 +42,7 @@ $hero-full-screen-text-color: white;
 }
 .roster-table{
   max-width: fit-content;
+  margin-right: 6rem;
 }
 .roster-show-table{
   display: flex;
@@ -63,4 +64,13 @@ $hero-full-screen-text-color: white;
   flex-direction: row;
   align-items: center;
   justify-content: center;
+  margin-right: 3rem;
+  width: 600px;
+}
+.shell-container{
+  margin: 4rem;
+}
+
+.shell-table{
+  max-width: fit-content;
 }
