@@ -6,6 +6,7 @@ const LineupContainer = (props) =>{
   const [currentLineup, setcurrentLineup] = useState([])
 
 
+
   const rowerArray = props.lineUp.map(rower =>{
     if(rower.first_name == null){
     return(
@@ -13,6 +14,23 @@ const LineupContainer = (props) =>{
     )
   }
   })
+  const addNewLineup = async (formPayload) => {
+    const response = await fetch(`/api/v1/lineups/`, {
+      credentials: "same-origin",
+      method: "POST",
+      headers: {
+        "Accept": "application/json",
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(formPayload),
+    })
+    if (!response.ok) {
+      const errorMessage = `${response.status} (${response.statusTest})`
+      const error = new Error(errorMessage)
+      throw(error)
+    }
+    const parsedNewLineup = await response.json()
+  }
 
   let shellSeats
   if(props.shell != undefined){
@@ -50,6 +68,9 @@ const LineupContainer = (props) =>{
         <img src={single}/>
         <img src={single}/>
       </div>
+      <div>
+        <input type='button' onSubmit={addNewLineup} value="Create Lineup" className="btn" />
+      </div>
       </>
       )
   }else if(shellSeats == 4){
@@ -77,6 +98,9 @@ const LineupContainer = (props) =>{
       <img src={single}/>
       <img src={single}/>
     </div>
+    <div>
+      <input type='button' onSubmit={addNewLineup} value="Create Lineup" className="btn" />
+    </div>
     </>
     )
   }else if(shellSeats == 2){
@@ -99,15 +123,23 @@ const LineupContainer = (props) =>{
         <img src={single}/>
         <img src={single}/>
       </div>
+      <div>
+        <input type='button' onSubmit={addNewLineup} value="Create Lineup" className="btn" />
+      </div>
       </>
     )
   }else{
     return(
-    <div className="callout lineup-container">
-      <p>
-        Select A boat
-      </p>
-    </div>
+    <>
+      <div className="callout lineup-container">
+        <p>
+          Select A boat
+        </p>
+      </div>
+      <div>
+        <input type='button' onSubmit={addNewLineup} value="Create Lineup" className="btn" />
+      </div>
+    </>
     )
   }
 }
