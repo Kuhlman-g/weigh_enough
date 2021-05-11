@@ -11,6 +11,7 @@ const BoatMainContainer = (props)=> {
   const [shells, setShells] = useState([])
   const [rowers, setRowers] = useState([])
   const [selectedRower, setSelectedRower] = useState([])
+  const [lineUp, setLineup] = useState([])
 
   const toggleSelectedRower = (id) => {
     if(id === selectedRower) {
@@ -36,6 +37,15 @@ const BoatMainContainer = (props)=> {
     }) 
   },[])
 
+  const addRowerToLineup = () => {
+    rowers.forEach(rower =>{
+      if(rower.id === selectedRower){
+        let newRowers = lineUp.concat(rower)
+        setLineup(newRowers)
+      }})
+      console.log(lineUp)
+  }
+
   const showRower = rowers.map(rower=> {
     if(rower.id === selectedRower){
         return(
@@ -47,14 +57,14 @@ const BoatMainContainer = (props)=> {
     if(parseInt(shell.id) == parseInt(selectedShell)){
     showShell = shell
     }
-  }) 
+  })
 
   return(
     <div>
       <div className="boats-main-container">
         <ShellContainer shells={shells} handleSelectedShell={toggleSelectedShell}/>
         <div>
-        <LineupContainer shell={showShell} />
+        <LineupContainer shell={showShell} lineUp ={lineUp} />
         </div>
       </div>
       <div className="boats-main-container">
@@ -62,6 +72,9 @@ const BoatMainContainer = (props)=> {
           <RowerRosterContainer rowersList={rowers} handleSelected={toggleSelectedRower} />
         </div>
         <div>
+          <div onClick={addRowerToLineup}>
+            Add Rower to LineUp
+          </div>
           {showRower}
         </div>
       </div>
