@@ -1,11 +1,13 @@
 import React from "react"
 
-const LineupCell = props => {
-
+const LineupCell = (props) => {
+  
   return(
-    <div>
-      Hello
-    </div>
+    <tr className="roster-text">
+      <td data-label="Rower"> {props.rowerFirst} {props.rowerLast}</td>
+      <td data-label="Seat">{props.seatId}</td>
+    </tr>
   )
 }
+
 export default LineupCell

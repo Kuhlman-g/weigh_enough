@@ -12,6 +12,10 @@ const BoatMainContainer = (props)=> {
   const [rowers, setRowers] = useState([])
   const [selectedRower, setSelectedRower] = useState([])
   const [lineUp, setLineup] = useState([])
+  const [newRower, setNewRower] = useState({
+    rower: null,
+    seatId: ''
+  })
 
   const toggleSelectedRower = (id) => {
     if(id === selectedRower) {
@@ -37,11 +41,22 @@ const BoatMainContainer = (props)=> {
     }) 
   },[])
 
-  const addRowerToLineup = () => {
-    rowers.forEach(rower =>{
-      if(rower.id === selectedRower){
-        let newRowers = lineUp.concat(rower)
-        setLineup(newRowers)
+
+  const handleChange = (event) => {
+    event.preventDefault()
+    setNewRower({
+      ...newRower,
+      [event.currentTarget.name]: event.currentTarget.value
+    })
+  }
+  const addRowerToLineup = (event) => {
+    event.preventDefault()
+    const tempRower = newRower
+    rowers.forEach(matchRower =>{
+      if(matchRower.id === selectedRower){
+        tempRower.rower = matchRower
+        let newLineup = lineUp.concat(tempRower)
+        setLineup(newLineup)
       }})
       console.log(lineUp)
   }
@@ -52,6 +67,7 @@ const BoatMainContainer = (props)=> {
           <RowerShowContainer shownRower={rower}/>
         )}
       })
+
   let showShell
    shells.forEach(shell =>{
     if(parseInt(shell.id) == parseInt(selectedShell)){
@@ -72,8 +88,21 @@ const BoatMainContainer = (props)=> {
           <RowerRosterContainer rowersList={rowers} handleSelected={toggleSelectedRower} />
         </div>
         <div>
-          <div onClick={addRowerToLineup}>
-            Add Rower to LineUp
+          <div className='seat-form'>
+          <form onSubmit={addRowerToLineup}>
+            <label htmlFor="seatId">Enter Seat Number:
+              <input 
+                id= 'seatId'
+                name= 'seatId'
+                type= 'number'
+                max= '8'
+                min= '1'
+                value = {newRower.seatId}
+                onChange = {handleChange}
+              />
+            </label>
+            <input type='submit' value='Add Rower To Seat' className="btn" />
+          </form>
           </div>
           {showRower}
         </div>
