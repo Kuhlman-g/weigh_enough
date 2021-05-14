@@ -13,7 +13,6 @@ const BoatMainContainer = (props)=> {
   const [selectedRower, setSelectedRower] = useState([])
   const [lineUp, setLineup] = useState([])
   const [newRower, setNewRower] = useState({
-    rower: null,
     seatId: ''
   })
 
@@ -51,14 +50,17 @@ const BoatMainContainer = (props)=> {
   }
   const addRowerToLineup = (event) => {
     event.preventDefault()
-    const tempRower = newRower
     rowers.forEach(matchRower =>{
       if(matchRower.id === selectedRower){
-        tempRower.rower = matchRower
-        let newLineup = lineUp.concat(tempRower)
-        setLineup(newLineup)
+        const rowerSeat = {
+          ...matchRower,
+          seatId: newRower.seatId
+        }
+        setLineup([
+          ...lineUp,
+          rowerSeat,
+        ])
       }})
-      console.log(lineUp)
   }
 
   const showRower = rowers.map(rower=> {
@@ -76,12 +78,38 @@ const BoatMainContainer = (props)=> {
     }
   })}
 
+  const addNewLineup = async () => {
+    debugger
+     try {
+       const response = await fetch(`/api/v1/lineups/`, {
+         credentials: "same-origin",
+         method: "POST",
+         headers: {
+           "Accept": "application/json",
+           "Content-Type": "application/json"
+         },
+         body: JSON.stringify({lineUp: lineUp, shell: selectedShell}),
+       })
+       if (!response.ok) {
+         const errorMessage = `${response.status} (${response.statusTest})`
+         const error = new Error(errorMessage)
+         throw(error)
+       }
+       const parsedNewLineup = await response.json()
+     } catch (error) {
+       console.error(error)
+     }
+   }
+
   return(
     <div>
       <div className="boats-main-container">
         <ShellContainer shells={shells} handleSelectedShell={toggleSelectedShell}/>
         <div>
-        <LineupContainer shell={showShell} lineUp ={lineUp} />
+        <LineupContainer shell={showShell} lineUp ={lineUp} addNewLineup={addNewLineup} />
+        </div>
+        <div>
+
         </div>
       </div>
       <div className="boats-main-container">

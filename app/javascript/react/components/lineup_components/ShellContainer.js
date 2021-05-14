@@ -10,7 +10,7 @@ const ShellContainer = props => {
   )})
 
   return(
-    <div className="grid-container lineup-container">
+    <div className="lineup-container">
     <table className="responsive-card-table shell-table">
       <thead>
         <tr>
