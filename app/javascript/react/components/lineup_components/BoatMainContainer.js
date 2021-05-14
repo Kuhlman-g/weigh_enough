@@ -69,11 +69,12 @@ const BoatMainContainer = (props)=> {
       })
 
   let showShell
+  if(shells != null){
    shells.forEach(shell =>{
     if(parseInt(shell.id) == parseInt(selectedShell)){
     showShell = shell
     }
-  })
+  })}
 
   return(
     <div>
