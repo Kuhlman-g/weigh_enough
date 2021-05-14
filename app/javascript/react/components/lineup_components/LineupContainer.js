@@ -3,9 +3,7 @@ import single from "../../../../assets/images/single.png"
 import LineupCell from './LineupCell.js'
 
 const LineupContainer = (props) =>{
-  const [currentLineup, setcurrentLineup] = useState([])
-
-
+  const [currentLineup, setCurrentLineup] = useState({})
 
   const rowerArray = props.lineUp.map(rower =>{
     if(rower.first_name == null){
@@ -30,6 +28,13 @@ const LineupContainer = (props) =>{
       throw(error)
     }
     const parsedNewLineup = await response.json()
+  }
+
+  const formSubmit = (event) =>{
+    event.preventDefault()
+    setCurrentLineup(props.lineUp)
+    debugger
+    addNewLineup(currentLineup)
   }
 
   let shellSeats
@@ -69,7 +74,7 @@ const LineupContainer = (props) =>{
         <img src={single}/>
       </div>
       <div>
-        <input type='button' onSubmit={addNewLineup} value="Create Lineup" className="btn" />
+        <input type='button' onClick={formSubmit} value="Create Lineup" className="btn" />
       </div>
       </>
       )
@@ -99,7 +104,7 @@ const LineupContainer = (props) =>{
       <img src={single}/>
     </div>
     <div>
-      <input type='button' onSubmit={addNewLineup} value="Create Lineup" className="btn" />
+      <input type='button' onSubmit={formSubmit} value="Create Lineup" className="btn" />
     </div>
     </>
     )
@@ -124,7 +129,7 @@ const LineupContainer = (props) =>{
         <img src={single}/>
       </div>
       <div>
-        <input type='button' onSubmit={addNewLineup} value="Create Lineup" className="btn" />
+        <input type='button' onSubmit={formSubmit} value="Create Lineup" className="btn" />
       </div>
       </>
     )
@@ -137,7 +142,7 @@ const LineupContainer = (props) =>{
         </p>
       </div>
       <div>
-        <input type='button' onSubmit={addNewLineup} value="Create Lineup" className="btn" />
+        <input type='button' onSubmit={formSubmit} value="Create Lineup" className="btn" />
       </div>
     </>
     )

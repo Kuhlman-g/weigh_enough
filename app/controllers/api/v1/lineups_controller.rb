@@ -6,4 +6,8 @@ class Api::V1::LineupsController < ApplicationController
   def show
   end
 
+  def create
+    binding.pry
+  end
+
 end
