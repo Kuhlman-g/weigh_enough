@@ -3,7 +3,6 @@ import single from "../../../../assets/images/single.png"
 import LineupCell from './LineupCell.js'
 
 const LineupContainer = (props) =>{
-  // const [currentLineup, setCurrentLineup] = useState({})
 
   const rowerArray = props.lineUp.map(rower =>{
     if(rower.first_name != null){

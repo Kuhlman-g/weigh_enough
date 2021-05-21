@@ -108,9 +108,6 @@ const BoatMainContainer = (props)=> {
         <div>
         <LineupContainer shell={showShell} lineUp ={lineUp} addNewLineup={addNewLineup} />
         </div>
-        <div>
-
-        </div>
       </div>
       <div className="boats-main-container">
         <div className="">

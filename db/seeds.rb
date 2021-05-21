@@ -14,3 +14,9 @@ rower3 = Rower.create(first_name: "Paul", last_name: "Popescu", height: 7, weigh
 boat1 = Boat.create(seats: 8, name: "The Prots")
 boat1 = Boat.create(seats: 8, name: "J-Kow")
 boat1 = Boat.create(seats: 4, name: "Graves")
+
+
+lineup1 = Lineup.create(name: "The best")
+lineup1.rowers << rower1
+lineup1.rowers << rower2
+lineup1.rowers << rower3
