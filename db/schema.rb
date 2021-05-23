@@ -34,8 +34,10 @@ ActiveRecord::Schema.define(version: 2021_05_05_181447) do
 
   create_table "lineups", force: :cascade do |t|
     t.string "name", null: false
+    t.bigint "boat_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["boat_id"], name: "index_lineups_on_boat_id"
   end
 
   create_table "rowers", force: :cascade do |t|
