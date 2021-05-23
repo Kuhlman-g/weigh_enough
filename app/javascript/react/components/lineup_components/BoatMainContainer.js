@@ -79,7 +79,6 @@ const BoatMainContainer = (props)=> {
   })}
 
   const addNewLineup = async () => {
-    debugger
      try {
        const response = await fetch(`/api/v1/lineups/`, {
          credentials: "same-origin",

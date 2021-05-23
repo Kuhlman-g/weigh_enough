@@ -1,7 +1,6 @@
 import React from "react"
 
 const LineupCell = (props) => {
-  debugger
   return(
     <tr className="roster-text">
       <td data-label="Rower"> {props.rowerFirst} {props.rowerLast}</td>

@@ -84,7 +84,7 @@ const LineupContainer = (props) =>{
       <img src={single}/>
     </div>
     <div>
-      <input type='button' onSubmit={formSubmit} value="Create Lineup" className="btn" />
+      <input type='button' onClick={formSubmit} value="Create Lineup" className="btn" />
     </div>
     </>
     )
@@ -109,7 +109,7 @@ const LineupContainer = (props) =>{
         <img src={single}/>
       </div>
       <div>
-        <input type='button' onSubmit={formSubmit} value="Create Lineup" className="btn" />
+        <input type='button' onClick={formSubmit} value="Create Lineup" className="btn" />
       </div>
       </>
     )
@@ -122,7 +122,7 @@ const LineupContainer = (props) =>{
         </p>
       </div>
       <div>
-        <input type='button' onSubmit={formSubmit} value="Create Lineup" className="btn" />
+        <input type='button' onClick={formSubmit} value="Create Lineup" className="btn" />
       </div>
     </>
     )
