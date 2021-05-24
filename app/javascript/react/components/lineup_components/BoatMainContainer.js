@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import { Redirect } from "react-router-dom"
 import ShellContainer from './ShellContainer.js'
 import fetchShells from '../fetches/FetchShells'
 import RowerRosterContainer from '../rower_components/RowerRosterContainer'
@@ -94,7 +95,6 @@ const BoatMainContainer = (props)=> {
          const error = new Error(errorMessage)
          throw(error)
        }
-       const parsedNewLineup = await response.json()
      } catch (error) {
        console.error(error)
      }

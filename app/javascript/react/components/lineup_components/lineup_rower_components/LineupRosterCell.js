@@ -1,10 +1,13 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 const LineupRosterCell = props =>{
   
   return(
-    <tr onClick={props.handleLineupClick}>
-      <td data-label="Lineup Name">{props.name}</td>
+    <tr>
+      <td data-label="Lineup Name">
+        <Link to={`boat-roster/${props.id}`}>{props.name}</Link>
+      </td>
       <td data-label="Seats">{props.seats}</td>
     </tr>
   )

@@ -26,8 +26,9 @@ const RowerMainContainer = (props) => {
         return(
           <RowerShowContainer shownRower={rower}/>
         )}
-      })
+    })
 
+    debugger
   return(
       <div className="">
         <div className="roster-show-table">
