@@ -1,9 +1,13 @@
 class Api::V1::LineupsController < ApplicationController
   
   def index
+    render json: Lineup.all
   end
 
   def show
+    binding.pry
+    show_lineup = Lineup.find(params["id"])
+    render json: selected_Lineup, serializer: LineupSerializer
   end
 
   def create

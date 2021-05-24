@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   get "/boats", to: "homes#react"
   get "/rowers", to: "homes#react"
   get "/boat-roster", to: "homes#react"
+  get "/boat-roster/:id", to: "homes#react"
 
   resources :boats, only: [ :index, :show ]
   resources :rowers, only: [ :new, :create ]
