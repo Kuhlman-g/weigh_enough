@@ -4,6 +4,6 @@ class Rower < ApplicationRecord
   validates :height, presence: true
   validates :weight, presence: true
 
- has_many :assignments
+  has_many :assignments
   has_many :lineups, through: :assignments
 end

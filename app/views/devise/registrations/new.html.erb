@@ -23,6 +23,11 @@
         <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
       </div>
 
+      <div class="field">
+        <%= f.label :zip_code %><br />
+        <%= f.text_field :zip_code %>
+      </div>
+
       <div class="actions" id="sign-button">
         <%= f.submit "Sign up" %>
       </div>
