@@ -1,13 +1,7 @@
 
 $hero-full-screen-text-color: white;
 
-.hero-full-screen{
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-
+body{
   background-image: url("https://www.row2k.com/graphics/pod/041017.jpg");
   background-size: cover;
   background-color: rgba(255,255,255,0.6);
@@ -21,7 +15,13 @@ $hero-full-screen-text-color: white;
     color: #00000091;
   }
 }
-
+.home-alignment{
+  height: 100vh;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
 .top-bar {
   background-image: linear-gradient(#037cc5, #3b68c9, #455fba, 	#3f579f);
 
@@ -29,6 +29,93 @@ $hero-full-screen-text-color: white;
     color: #acacac;
   }
 }
-.main-rower-div{
+.rower-main-container{
+  height: 100vh;
   color: white;
+  align-items: center;
+  justify-content: center;
+  padding-top: 20px;
+}
+.roster-text {
+  color: black;
+  text-align: left;
+}
+.roster-table{
+  max-width: fit-content;
+  margin-right: 6rem;
+}
+.roster-show-table{
+  display: flex;
+  margin: 0 auto;
+}
+
+.boats-main-container{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding-top: 40px;
+}
+
+.lineup-container{
+  height: 300px;
+  display: flex;
+  color: white;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin-right: 3rem;
+  width: 650px;
+  img{
+    max-width: 80px;
+  }
+}
+.shell-container{
+  margin: 4rem;
+}
+
+.shell-table{
+  max-width: fit-content;
+}
+.seat-form{
+  max-width: fit-content;
+}
+
+.stats-list {
+  list-style-type: none;
+  clear: left;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+
+  .stats-list-positive {
+    color: black;
+  }
+
+  .stats-list-negative {
+    color: black;
+  }
+
+  & > li {
+    display: inline-block;
+    margin-right: 10px;
+    padding-right: 10px;
+    border-right: 1px solid grey;
+    text-align: center;
+    font-size: 1.1em;
+    font-weight: bold;
+
+    &:last-child {
+      border: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .stats-list-label {
+      display: block;
+      margin-top: 2px;
+      font-size: 0.9em;
+      font-weight: normal;
+    }
+  }
 }
