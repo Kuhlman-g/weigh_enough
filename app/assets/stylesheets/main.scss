@@ -56,7 +56,13 @@ body{
   justify-content: center;
   padding-top: 40px;
 }
-
+.lineup-padding{
+  padding-top: 5rem;
+  text-align: center;
+}
+.text-align{
+  text-align: center;
+}
 .lineup-container{
   height: 300px;
   display: flex;
@@ -75,9 +81,6 @@ body{
 }
 
 .shell-table{
-  max-width: fit-content;
-}
-.seat-form{
   max-width: fit-content;
 }
 
@@ -118,4 +121,12 @@ body{
       font-weight: normal;
     }
   }
+}
+
+.rower-padding{
+  padding-top: 3rem;
+}
+
+.lineup-width{
+  max-width: 5rem;
 }

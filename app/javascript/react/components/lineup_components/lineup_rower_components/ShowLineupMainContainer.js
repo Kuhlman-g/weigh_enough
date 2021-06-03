@@ -24,11 +24,9 @@ const ShowLineupMainContainer = props => {
 
 
   return(
-    <div>
-      <div>
+      <div className="grid-x margin-x lineup-padding">
         <ShowLineupRosterContainer lineups={lineup} handleLineupClick={handleLineupClick} />
       </div>
-    </div>
     )
 }
 

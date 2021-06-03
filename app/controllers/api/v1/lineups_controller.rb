@@ -10,7 +10,7 @@ class Api::V1::LineupsController < ApplicationController
   end
 
   def create
-    count = Lineup.count
+    count = Lineup.count + 1
     lineup = Lineup.create(name: count)
     lineup.boat_id = params["shell"]
     if lineup.save

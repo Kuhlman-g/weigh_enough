@@ -14,7 +14,7 @@ const WeatherContainer = (props) => {
       }
       const parsedWeather = await response.json()
       setWeather(parsedWeather)
-    } catch(err){
+    }catch(err){
       console.error(`Error in fetch: ${err.message}`)
     }
   }
