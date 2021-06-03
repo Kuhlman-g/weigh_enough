@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { Redirect } from "react-router-dom"
+import { Redirect } from 'react-router-dom'
 import ShellContainer from './ShellContainer.js'
 import fetchShells from '../fetches/FetchShells'
 import RowerRosterContainer from '../rower_components/RowerRosterContainer'
@@ -16,6 +16,8 @@ const BoatMainContainer = (props)=> {
   const [newRower, setNewRower] = useState({
     seatId: ''
   })
+  const [shouldRedirect, setShouldRedirect] = useState(false)
+  
 
   const toggleSelectedRower = (id) => {
     if(id === selectedRower) {
@@ -51,6 +53,7 @@ const BoatMainContainer = (props)=> {
   }
   const addRowerToLineup = (event) => {
     event.preventDefault()
+    
     rowers.forEach(matchRower =>{
       if(matchRower.id === selectedRower){
         const rowerSeat = {
@@ -95,25 +98,26 @@ const BoatMainContainer = (props)=> {
          const error = new Error(errorMessage)
          throw(error)
        }
+       setShouldRedirect(true)
      } catch (error) {
        console.error(error)
      }
    }
 
+  if (shouldRedirect){
+    return <Redirect push to='/boat-roster' />
+  }
+
   return(
-    <div>
-      <div className="boats-main-container">
+    <div className="grid-x margin-x">
+      <div className="callout secondary small-4">
         <ShellContainer shells={shells} handleSelectedShell={toggleSelectedShell}/>
-        <div>
-        <LineupContainer shell={showShell} lineUp ={lineUp} addNewLineup={addNewLineup} />
-        </div>
+        <RowerRosterContainer rowersList={rowers} handleSelected={toggleSelectedRower} />
       </div>
-      <div className="boats-main-container">
-        <div className="">
-          <RowerRosterContainer rowersList={rowers} handleSelected={toggleSelectedRower} />
-        </div>
-        <div>
-          <div className='seat-form'>
+      <div className="callout secondary small-8">
+        <LineupContainer shell={showShell} lineUp ={lineUp} addNewLineup={addNewLineup} />
+        <div className="grid-x margin-x"> 
+        <div className='callout secondary small-4'>
           <form onSubmit={addRowerToLineup}>
             <label htmlFor="seatId">Enter Seat Number:
               <input 
@@ -126,14 +130,16 @@ const BoatMainContainer = (props)=> {
                 onChange = {handleChange}
               />
             </label>
-            <input type='submit' value='Add Rower To Seat' className="btn" />
+            <input type='submit' value='Add Rower To Seat' className="button" />
           </form>
-          </div>
+        </div>
+        <div className='callout secondary small-4'>
           {showRower}
+        </div>
         </div>
       </div>
     </div>
-  )
+  );
 }
 
 export default BoatMainContainer

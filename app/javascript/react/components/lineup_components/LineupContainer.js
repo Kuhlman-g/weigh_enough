@@ -1,4 +1,5 @@
 import React, { useState } from "react"
+import { Redirect } from 'react-router-dom'
 import single from "../../../../assets/images/single.png"
 import LineupCell from './LineupCell.js'
 
@@ -15,6 +16,9 @@ const LineupContainer = (props) =>{
   const formSubmit = (event) =>{
     event.preventDefault()
     props.addNewLineup()
+      return(
+        <Redirect  to="/boat-roster"/>
+      )
   }
 
   let shellSeats
@@ -27,7 +31,7 @@ const LineupContainer = (props) =>{
   if (shellSeats == 8){
     return(
       <>
-      <div>
+      <div className="callout secondary small-2">
         <table className="responsive-card-table shell-table">
         <thead>
           <tr>
@@ -54,14 +58,14 @@ const LineupContainer = (props) =>{
         <img src={single}/>
       </div>
       <div>
-        <input type='button' onClick={formSubmit} value="Create Lineup" className="btn" />
+        <input type='button' onClick={formSubmit} value="Create Lineup" className="button" />
       </div>
       </>
       )
   }else if(shellSeats == 4){
     return(
     <>
-    <div>
+    <div className="callout secondary small-2">
       <table className="responsive-card-table shell-table">
       <thead>
         <tr>
@@ -84,14 +88,14 @@ const LineupContainer = (props) =>{
       <img src={single}/>
     </div>
     <div>
-      <input type='button' onClick={formSubmit} value="Create Lineup" className="btn" />
+      <input type='button' onClick={formSubmit} value="Create Lineup" className="button" />
     </div>
     </>
     )
   }else if(shellSeats == 2){
     return(
       <>
-      <div>
+      <div className="secondary small-2">
         <table className="shell-table">
         <thead>
           <tr>
@@ -109,7 +113,7 @@ const LineupContainer = (props) =>{
         <img src={single}/>
       </div>
       <div>
-        <input type='button' onClick={formSubmit} value="Create Lineup" className="btn" />
+        <input type='button' onClick={formSubmit} value="Create Lineup" className="button" />
       </div>
       </>
     )
@@ -122,7 +126,7 @@ const LineupContainer = (props) =>{
         </p>
       </div>
       <div>
-        <input type='button' onClick={formSubmit} value="Create Lineup" className="btn" />
+        <input type='button' onClick={formSubmit} value="Create Lineup" className="button" />
       </div>
     </>
     )

@@ -13,7 +13,7 @@ const RowerRosterContainer = (props) => {
 
   return(
     <div className="roster-table">
-      <table className="responsive-card-table unstriped roster-table">
+      <table className="responsive-card-table roster-table hover">
         <thead>
           <tr>
             <th>Last Name</th>
@@ -24,7 +24,7 @@ const RowerRosterContainer = (props) => {
           {rowersArray}
         </tbody>
       </table>
-      <a href="rowers/new">Add Rowers To Roster</a>
+      <a href="rowers/new" className="button">Add Rowers To Roster</a>
     </div>
   )
 }

@@ -16,7 +16,7 @@ const WeatherTile = props => {
           {props.weather.main.temp} <span className="stats-list-label">Temp</span>
         </li>
         <li className="stats-list-positive">
-          {props.weather.wind.speed} MPH <span className="stats-list-label">Wind Speed</span>
+          {props.weather.wind.speed} Knots <span className="stats-list-label">Wind Speed</span>
         </li>
       </ul>
     </div>

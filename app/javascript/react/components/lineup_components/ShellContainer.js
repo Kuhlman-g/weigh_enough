@@ -10,8 +10,8 @@ const ShellContainer = props => {
   )})
 
   return(
-    <div className="lineup-container">
-    <table className="responsive-card-table shell-table">
+    <div className="">
+    <table className="responsive-card-table hover">
       <thead>
         <tr>
           <th>Shell Name</th>

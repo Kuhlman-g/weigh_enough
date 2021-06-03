@@ -38,8 +38,12 @@ const ShowLineupShowContainer = (props) => {
   }, [])
 
   return(
-    <div>
-      <p>{lineupArray}</p>
+    <div className="grid-x margin-x lineup-padding">
+      <div className="cell small-2"></div>
+        <div className="callout secondary large-auto">
+        {lineupArray}
+        </div>
+      <div className="cell small-2"></div>
     </div>
   )
 

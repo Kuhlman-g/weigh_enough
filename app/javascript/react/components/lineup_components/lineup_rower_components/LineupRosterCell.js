@@ -8,7 +8,6 @@ const LineupRosterCell = props =>{
       <td data-label="Lineup Name">
         <Link to={`boat-roster/${props.id}`}>{props.name}</Link>
       </td>
-      <td data-label="Seats">{props.seats}</td>
     </tr>
   )
 }

@@ -28,14 +28,13 @@ const RowerMainContainer = (props) => {
         )}
     })
 
-    debugger
   return(
-      <div className="">
-        <div className="roster-show-table">
-          {showRower}
-        </div>
-        <div className="">
+      <div className="grid-x margin-x rower-padding">
+        <div className="callout secondary small-6 text-align">
           <RowerRosterContainer rowersList={rowers} handleSelected={toggleSelectedRower} />
+        </div>
+        <div className="callout secondary small-6">
+          {showRower}
         </div>
       </div>
   )

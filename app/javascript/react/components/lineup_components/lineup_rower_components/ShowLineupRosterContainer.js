@@ -11,19 +11,22 @@ const ShowLineupRosterContainer = props => {
   })
 
   return(
-    <div>
-      <table className="responsive-card-table shell-table">
-        <thead>
-          <tr>
-            <th>Rower</th>
-            <th>Seat</th>
-          </tr>
-        </thead>
-        <tbody>
-          {lineupArray}
-        </tbody>
-      </table>
-    </div> 
+    <>
+    <div className="cell small-4"></div>
+      <div className="callout secondary large-auto">
+        <table className="responsive-card-table hover">
+          <thead>
+            <tr>
+              <th className="text-align">Lineup</th>
+            </tr>
+          </thead>
+          <tbody>
+            {lineupArray}
+          </tbody>
+        </table>
+      </div> 
+      <div className="cell small-4"></div>
+    </>
   )
 }
 
